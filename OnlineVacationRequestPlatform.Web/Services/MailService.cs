@@ -3,8 +3,6 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 using OnlineVacationRequestPlatform.Web.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlineVacationRequestPlatform.Web.Services

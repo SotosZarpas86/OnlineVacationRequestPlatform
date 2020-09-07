@@ -1,7 +1,5 @@
 ﻿using OnlineVacationRequestPlatform.BusinessLayer.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnlineVacationRequestPlatform.BusinessLayer.Models
 {

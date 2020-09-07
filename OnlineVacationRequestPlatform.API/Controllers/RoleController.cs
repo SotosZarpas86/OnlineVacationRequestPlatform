@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineVacationRequestPlatform.BusinessLayer.Interfaces;
 using System;
 using System.Threading.Tasks;

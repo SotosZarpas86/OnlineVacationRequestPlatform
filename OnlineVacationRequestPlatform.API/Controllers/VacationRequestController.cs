@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineVacationRequestPlatform.BusinessLayer.Interfaces;
 using OnlineVacationRequestPlatform.BusinessLayer.Models;
-using OnlineVacationRequestPlatform.BusinessLayer.Utilities;
 using System;
 using System.Threading.Tasks;
 
