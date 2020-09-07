@@ -1,0 +1,62 @@
+﻿@model OnlineVacationRequestPlatform.Web.Models.VacationApplicationStatusViewModel
+@{
+    ViewData["Title"] = "Validate Application";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Vacation Application</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="margin-top:10px;">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8"><h2>New Vacation Request Application</h2></div>
+            <div class="col-lg-2"></div>
+        </div>
+        <div class="row" style="margin-top:10px;">
+            @{
+                if (Model.RequestStatus == OnlineVacationRequestPlatform.Web.Utilities.RequestStatus.Pending)
+                {
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <div class="btn-group">
+                            <div class="col-6">
+                                <form asp-controller="Application" asp-action="Approve" method="post">
+                                    <input type="hidden" asp-for="DateSubmitted" />
+                                    <input type="hidden" asp-for="VacationApplicationId" />
+                                    <input type="hidden" asp-for="ApplicantId" />
+                                    <button type="submit" class="btn btn-success" style="width:120px;">Approve</button>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <form asp-controller="Application" asp-action="Reject" method="post">
+                                    <input type="hidden" asp-for="DateSubmitted" />
+                                    <input type="hidden" asp-for="VacationApplicationId" />
+                                    <input type="hidden" asp-for="ApplicantId" />
+                                    <button type="submit" class="btn btn-danger" style="width:120px;">Reject</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                }
+                else
+                {
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <h4>This vacation application has already been processed</h4>
+                    </div>
+                    <div class="col-lg-2"></div>
+                }
+            }
+
+        </div>
+    </div>
+</body>
+</html>

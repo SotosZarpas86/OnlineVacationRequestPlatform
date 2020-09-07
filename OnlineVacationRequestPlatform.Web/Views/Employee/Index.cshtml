@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OnlineVacationRequestPlatform.Web.Models.VacationApplicationViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSubmitted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacationStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacationEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DaysRequested)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestStatus)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateSubmitted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacationStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacationEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaysRequested)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestStatus)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
