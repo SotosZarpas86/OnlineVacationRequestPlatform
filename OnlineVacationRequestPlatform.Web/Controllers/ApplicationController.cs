@@ -47,7 +47,7 @@ namespace OnlineVacationRequestPlatform.Web.Controllers
             var result = await _vacationRequestService.UpdateVacationRequestStatusAsync(vacationApplicationStatus);
             if (result)
             {
-                var user = await GetSupervisorEmailAsync(vacationApplicationStatus.VacationApplicationId);
+                var user = await GetSupervisorEmailAsync(vacationApplicationStatus.ApplicantId);
                 var emailContent = $"<html><body><p>Dear employee, <br><br>Your application has been accepted.<br><br>Your application submitted on {vacationApplicationStatus.DateSubmitted.ToLocalTime()}</p></body></html>";
                 await _mailService.SendEmailAsync(user, "RE: Vacation Request", emailContent);
                 return RedirectToAction("Validate", "Application", new { id = vacationApplicationStatus.VacationApplicationId });
@@ -63,7 +63,7 @@ namespace OnlineVacationRequestPlatform.Web.Controllers
             var result = await _vacationRequestService.UpdateVacationRequestStatusAsync(vacationApplicationStatus);
             if (result)
             {
-                var user = await GetSupervisorEmailAsync(vacationApplicationStatus.VacationApplicationId);
+                var user = await GetSupervisorEmailAsync(vacationApplicationStatus.ApplicantId);
                 var emailContent = $"<html><body><p>Dear employee, <br><br>Your application has been rejected.<br><br>Your application submitted on {vacationApplicationStatus.DateSubmitted.ToLocalTime()}</p></body></html>";
                 await _mailService.SendEmailAsync(user, "RE: Vacation Request", emailContent);
                 return RedirectToAction("Validate", "Application", new { id = vacationApplicationStatus.VacationApplicationId });
